@@ -106,7 +106,7 @@ func TestGetTicketByDestination(t *testing.T) {
 	repo := NewRepositoryTest(dbMock)
 	service := NewService(repo)
 
-	tkts, err := service.GetTotalTickets(cxt, "China")
+	tkts, err := service.GetTotalTickets(nil, "China")
 
 	assert.Nil(t, err)
 	assert.True(t, dbMock.spy)
@@ -123,7 +123,7 @@ func TestGetTotalTickets(t *testing.T) {
 	repo := NewRepositoryTest(dbMock)
 	service := NewService(repo)
 
-	avr, err := service.AverageDestination(cxt, "China")
+	avr, err := service.AverageDestination(nil, "China")
 
 	assert.Nil(t, err)
 	assert.NotNil(t, avr)
