@@ -2,9 +2,9 @@ package tickets
 
 import (
 	"context"
+	"github.com/bootcamp-go/desafio-go-web/internal/domain"
 	"testing"
 
-	"github.com/bootcamp-go/desafio-go-web/internal/domain"
 	"github.com/stretchr/testify/assert"
 )
 

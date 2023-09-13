@@ -14,7 +14,7 @@ import (
 func main() {
 
 	// Cargo csv.
-	list, err := LoadTicketsFromFile("../../tickets.csv")
+	list, err := LoadTicketsFromFile("/Users/scastelli/GolandProjects/desafio-go-web/tickets.csv")
 	if err != nil {
 		panic("Couldn't load tickets")
 	}
@@ -63,3 +63,11 @@ func LoadTicketsFromFile(path string) ([]domain.Ticket, error) {
 
 	return ticketList, nil
 }
+
+/*
+Requerimiento 5:
+Correr el main.go y testear los endpoints con la herramienta de Postman.
+
+Tip: El comando go mod tidy puede ser necesario previo a correr el main.
+Tip 2: Desarrollar los test faltantes es un plus..
+*/

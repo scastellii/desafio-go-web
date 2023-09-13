@@ -22,13 +22,13 @@ func (s *Service) GetTicketsByCountry() gin.HandlerFunc {
 
 		destination := c.Param("dest")
 
-		tickets, err := s.service.GetTotalTickets(c, destination)
+		totalTickets, err := s.service.GetTotalTickets(c, destination)
 		if err != nil {
-			c.String(http.StatusInternalServerError, err.Error(), nil)
+			c.String(http.StatusInternalServerError, err.Error())
 			return
 		}
 
-		c.JSON(200, tickets)
+		c.JSON(200, totalTickets)
 	}
 }
 
@@ -39,7 +39,7 @@ func (s *Service) AverageDestination() gin.HandlerFunc {
 
 		avg, err := s.service.AverageDestination(c, destination)
 		if err != nil {
-			c.String(http.StatusInternalServerError, err.Error(), nil)
+			c.String(http.StatusInternalServerError, err.Error())
 			return
 		}
 
